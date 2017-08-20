@@ -13,9 +13,9 @@
             <div class="panel-heading">
                 <h3 class="panel-title" ng-bind="::item.name"></h3>
                 <em class="text-muted">
-                    <span ng-bind="::item.start | date : 'medium'"></span>
+                    <span ng-bind="::item.start | date : 'short'"></span>
                     -
-                    <span ng-bind="::item.end | date : 'medium'"></span>
+                    <span ng-bind="::item.end | date : 'short'"></span>
                 </em>
             </div>
             <div class="panel-body" ng-bind="::item.description"></div>
