@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="splatoontracker">
+<head>
+    <title>Splatoon 2 Event Tracker</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./app.js"></script>
+</head>
+<body ng-controller="MainCtrl as $ctrl">
+    <div class="container">
+        <div class="panel panel-default" ng-repeat="item in $ctrl.eventList | orderBy:'start'">
+            <div class="panel-heading">
+                <h3 class="panel-title" ng-bind="::item.name"></h3>
+                <em class="text-muted">
+                    <span ng-bind="::item.start | date : 'medium'"></span>
+                    -
+                    <span ng-bind="::item.end | date : 'medium'"></span>
+                </em>
+            </div>
+            <div class="panel-body" ng-bind="::item.description"></div>
+        </div>
+    </div>
+</body>
+</html>
